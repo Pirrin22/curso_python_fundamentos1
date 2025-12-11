@@ -5,7 +5,9 @@ Los literales son tipos de datos cuyos valores estan determinados por el literal
 print("Hola, soy Cristian")
 
 # Este literal es un Entero (int) 
-print(5)
+print(5) # int simple
+print(0o123) # int octal
+print(0x123) # int hexadecimal
 
 # Este literal es un Numero de punto flotante (float)
 print(5.5)
