@@ -11,3 +11,18 @@ No te preocupes si tu código no es perfecto - está bien si acepta una hora inv
 Prueba el código cuidadosamente. Pista: utilizar el operador % puede ser clave para el éxito.
 
 '''
+
+hour = int(input("Hora de inicio (horas): "))
+mins = int(input("Minuto de inicio (minutos): "))
+dura = int(input("Duración del evento (minutos): "))
+
+mins = mins + dura # encontrar el núimero de minutos
+hour = hour + mins // 60 # encontrar el número de horas ocultas en los minutos y actualizar horas
+mins = mins % 60 # corregir los minutos para que estén en un rango (0..59)
+hour = hour % 24 # corregir las horas para que estén en un rango (0..24)
+
+
+print(hour, ":", mins, sep='')
+
+
+
