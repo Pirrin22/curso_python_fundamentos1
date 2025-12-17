@@ -47,7 +47,3 @@ if number3 > largest_number:
 
 # Imprimimos el resultado.
 print("el numero mas grande es: ", largest_number)
-
-
-
-
