@@ -43,3 +43,46 @@ sombrero[2] = int(input("Ingresa un numero para cambiar el valor del indice 2 de
 print(f"La lista actual queda asi: {sombrero}")
 del sombrero[4]
 print(f"La longitud de la lista es: {len(sombrero)}")
+
+#----------------------------------------------------------------------------------------------------------------#
+
+# Añadir un elemento al final de la lista.
+numbers.append(12)
+print(f"La lista despues de añadir un elemeto mas: {numbers}")
+
+# Añadir un elemento en el lugar que queramos de la lista.
+numbers.insert(3, 15)
+print(f"La lista despues de añadir un elemento al indice seleccionado: {numbers}")
+
+# Creamos una lista vacia y la llenamos con un bucle for.
+llenar_con_bucle = []
+
+for i in range(5):
+    llenar_con_bucle.append(i + 1)
+
+print(f"La lista vacia 'llenar_con_bucle' ahora tiene los siguientes numeros: {llenar_con_bucle}")
+
+# Creamos una lista vacia y la llenamos con un bucle for con inicio en 0.
+llenar_con_bucle2 = []
+
+for i in range(5):
+    llenar_con_bucle2.insert(0, i + 1)
+
+print(f"La lista vacia 'llenar_con_bucle2' ahora contiene: {llenar_con_bucle2}")
+
+# Sumamos todos los valores de una lista con el bucle for.
+sumar_lista = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(sumar_lista)):
+    total += sumar_lista[i]
+
+print(f"La suma total de los elementos de la lista es: {total}")
+
+sumar_lista2 = [10, 1, 8, 3, 5]
+total2 = 0
+
+for i in sumar_lista2:
+    total2 += i
+
+print(f"El total de la suma de los elementos de 'sumar_lista2' es: {total2}")
