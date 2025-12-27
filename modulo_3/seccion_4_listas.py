@@ -86,3 +86,63 @@ for i in sumar_lista2:
     total2 += i
 
 print(f"El total de la suma de los elementos de 'sumar_lista2' es: {total2}")
+
+# Cambiar elementos de una lista a otra.
+
+my_list = [10, 1, 8, 3, 5]
+length = len(my_list)
+for i in range(length // 2):
+    my_list[i], my_list[length - i - 1] = my_list[length - i - 1], my_list[i]
+
+print(my_list)
+
+#----------------------------------------------------------------------------------------------------------------#
+
+'''
+Ejercicio 5: LOS FUNDAMENTOS DE LAS LISTAS: LOS BEATLES
+
+- Escenario
+Los Beatles fueron uno de los grupos de música más populares de la década de 1960 y la banda más vendida en la historia. Algunas personas los consideran el acto más influyente de la era del rock. De hecho, se incluyeron en la compilación de la revista Time de las 100 personas más influyentes del siglo XX.
+
+La banda sufrió muchos cambios de formación, que culminaron en 1962 con la formación de John Lennon, Paul McCartney, George Harrison y Richard Starkey (mejor conocido como Ringo Starr).
+
+
+Escribe un programa que refleje estos cambios y le permita practicar con el concepto de listas. Tu tarea es:
+
+- paso 1: crea una lista vacía llamada beatles;
+- paso 2: emplea el método append() para agregar los siguientes miembros de la banda a la lista: John Lennon, Paul McCartney y George Harrison;
+- paso 3: emplea el buclefor y el append() para pedirle al usuario que agregue los siguientes miembros de la banda a la lista: Stu Sutcliffe, y Pete Best;
+- paso 4: usa la instrucción del para eliminar a Stu Sutcliffe y Pete Best de la lista;
+- paso 5: usa el método insert() para agregar a Ringo Starr al principio de la lista.
+
+'''
+# Paso 1: Crea una lista Vacia
+beatles = []
+print(f"Paso 1: {beatles}")
+
+# Paso 2: Empleo el metodo 'append()' para llenar algunos elementos en la lista.
+beatles.append("Jhon Lennon")
+beatles.append("Paul McCartbey")
+beatles.append("George Harrison")
+print(f"Paso 2: {beatles}")
+
+# Paso 3: Empleamos un bucle 'for' para acabar de llenar la lista con el resto de integrantes.
+
+for i in range(2):
+    nombre = input(f"Ingresa el nombre de los integrantes que faltan: ")
+    beatles.append(nombre)
+
+print(f"Paso 3: {beatles}")
+
+# Paso 4: Usamos la instruccion 'del' para eliminar a los ultimos integrantes de la banda.
+
+del beatles[4]
+del beatles[3]
+
+print(f"Paso 4: {beatles}")
+
+# Paso 5: Usamos el metodo 'insert()' para añadir a Ringo Starr al principio de la lista.
+
+beatles.insert(0, 'Ringo Starr')
+
+print(f"Paso 5: {beatles}")
