@@ -89,3 +89,52 @@ for i in range(len(test_years)):
         print("Fallido")
 
 
+'''
+Ejercicio 3: DIA DEL AÑO: ESCRIBIENDO Y USANDO TUS PROPIAS FUNCIONES.
+
+Tu tarea es escribir y probar una función que toma tres argumentos (un año, un mes y un día del mes) y devuelve el día correspondiente del año, o devuelve None si cualquiera de los argumentos no es válido.
+
+Debes utilizar las funciones previamente escritas y probadas. Agrega algunos casos de prueba al código. Esta prueba es solo el comienzo.
+'''
+# Comprobamos si un año es bisiesto
+def is_year_leap(year):
+    if year % 4 != 0:
+        return False
+    elif year % 100 == 0 and year % 400 != 0:
+        return False
+    elif year % 4 == 0 and year % 100 != 0:
+        return True
+    else:
+        return True
+    
+
+# Comprobamos los dias del mes/año
+def days_in_month(year, month):
+    dias_por_mes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if year < 1582:
+        return None
+    elif month < 1 or month > 12:
+        return None
+    else:
+        if month == 2 and is_year_leap(year):
+            return 29
+        return dias_por_mes[month - 1]
+    
+
+def day_of_year(year, month, day):
+    dias_mes_totales = days_in_month(year, month)
+    if dias_mes_totales == None:
+        return None
+    if day < 1 or day > dias_mes_totales:
+        return None
+    
+    resultado = day
+
+    for i in range(1, month):
+        resultado = resultado + days_in_month(year, i)
+    return resultado
+
+print(day_of_year(2000, 12, 31))
+print(day_of_year(2023, 1, 1))
+print(day_of_year(2023, 3, 1))
+print(day_of_year(2023, 2, 30))
