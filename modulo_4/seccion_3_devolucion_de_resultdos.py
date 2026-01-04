@@ -176,3 +176,54 @@ for i in range(1, 20):
     if is_prime(i + 1):
         print(i + 1, end=" ")
 print()
+
+
+'''
+Ejercicio 5: CONVERSION DE CONSUMO DE COMBUSTIBLE.
+
+El consumo de combustible de un automóvil se puede expresar de muchas maneras diferentes. Por ejemplo, en Europa, se muestra como la cantidad de combustible consumido por cada 100 kilómetros.
+
+En los EE. UU., se muestra como la cantidad de millas recorridas por un automóvil con un galón de combustible.
+
+Tu tarea es escribir un par de funciones que conviertan l/100km a mpg (milas por galón), y viceversa.
+
+Las funciones:
+
+se llaman liters_100km_to_miles_gallon y miles_gallon_to_liters_100km respectivamente;
+toman un argumento (el valor correspondiente a sus nombres)
+Complementa el código en el editor y ejecuta tu código y verifica si tu salida es la misma que la nuestra.
+
+Aquí hay información para ayudarte:
+
+1 milla = 1609.344 metros.
+1 galón = 3.785411784 litros.
+'''
+
+km = 100
+# La variable 'milla' ya esta convertida en metros
+milla = 1609.344
+# la variable 'galon' ya esta pasada a litros.
+galon = 3.785411784
+# Convertimos Litros a Galones
+def liters_100km_to_miles_gallon(liters):
+    metros = km * 1000
+    millas_recorridas = metros / milla
+
+    galones_usados = liters / galon
+
+    return millas_recorridas / galones_usados
+
+# Convertimos Galones en litros
+def miles_gallon_to_liters_100km(miles):
+    km_recorridos = (miles * milla) / 1000
+
+    litros_usados = galon
+    return (litros_usados * 100) / km_recorridos
+    
+
+print(liters_100km_to_miles_gallon(3.9))
+print(liters_100km_to_miles_gallon(7.5))
+print(liters_100km_to_miles_gallon(10.))
+print(miles_gallon_to_liters_100km(60.3))
+print(miles_gallon_to_liters_100km(31.4))
+print(miles_gallon_to_liters_100km(23.5))
