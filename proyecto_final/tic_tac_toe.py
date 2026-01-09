@@ -13,12 +13,14 @@ Tu tarea es escribir un simple programa que simule jugar a tic-tac-toe (nombre e
 
 '''
 
-import random
+from random import randrange
 tablero = [
     [1, 2, 3],
     [4, 5, 6], 
     [7, 8, 9]
 ]
+
+# ----------------- FUNCIONES ----------------#
 
 # Funcion para crear el tablero mas visual.
 def display_board(board):
@@ -52,13 +54,34 @@ def make_list_of_free_fields(board):
                 libres.append((row, col))
     return libres
 
-
-
-
+# Revisamos si alguien a ganado la partida.
 def victory_for(board, sign):
+    for i in range(3):
+        if board[i][0] == sign and board[i][1] == sign and board[i][2] == sign:
+            return True
+    
+    for i in range(3):
+        if board[0][i] == sign and board[1][i] == sign and board[2][i] == sign:
+            return True
+        
+    if board[0][0] == sign and board[1][1] == sign and board[2][2] == sign:
+        return True
+    elif board[0][2] == sign and board[1][1] == sign and board[2][0] == sign:
+        return True
+    return False
 
 
-
+# Movimiento random de la IA
 def draw_move(board):
+    lista_libre = make_list_of_free_fields(board)
+
+    cantidad = len(lista_libre)
+
+    if cantidad > 0:
+        indice_azar = randrange(cantidad)
+        row, col = lista_libre[indice_azar]
+
+        board[row][col] = 'X'
 
 
+#----------- PROGRAMA FINAL ---------------#
