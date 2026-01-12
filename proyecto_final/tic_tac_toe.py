@@ -85,3 +85,44 @@ def draw_move(board):
 
 
 #----------- PROGRAMA FINAL ---------------#
+# Inicialización: La maquina siempre empieza en el centro (Regla del Juego)
+board = [
+    [1, 2, 3],
+    [4, 'X', 6],
+    [7, 8, 9]
+]
+
+
+# Bucle del juego
+while True:
+    display_board(board)
+
+    # ---- Aqui tira el Humano
+    enter_move(board)
+
+
+    if victory_for(board, 'O') == True:
+        display_board(board)
+        print('You Win!!!')
+        break
+
+    if len(make_list_of_free_fields(board)) == 0:
+        display_board(board)
+        print('Draw')
+        break
+    
+    # ---- Aqui tira la Maquina
+    # Mostramos el Tablero para ver el movimiento anterior
+    display_board(board)
+    draw_move(board)
+
+    if victory_for(board, 'X') == True:
+        display_board(board)
+        print('You lose')
+        break
+
+    if len(make_list_of_free_fields(board)) == 0:
+        display_board(board)
+        print('Draw')
+        break
+
